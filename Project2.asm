@@ -51,7 +51,51 @@
 
 # START WRITING YOUR ASSEMBLY CODE HERE:
 
+#Result stored in $t7!
 
+.data
+    n: .word 11         # Change this value to compute Fibonacci(n)
+
+.text
+    main:
+        # Load n from memory
+        LW   $t0, n($zero)  # t0 = n
+
+        # Base cases
+        BLEZ $t0, store_zero
+        ADDI $t1, $zero, 0   # a = 0
+        ADDI $t2, $zero, 1   # b = 1
+
+        # Check if n == 1
+        BEQ  $t0, $t2, store_one    # If n == 1, store 1
+
+        ADDI $t3, $t0, -1    # t3 = n - 1 (loop counter)
+    
+    loop:
+        BEQ  $t3, $zero, done  # if counter == 0, exit loop
+
+        ADD  $t4, $t1, $t2   # temp = a + b
+        ADD  $t1, $t2, $zero # a = b
+        ADD  $t2, $t4, $zero # b = temp
+
+        ADDI $t3, $t3, -1    # decrement counter
+        BEQ  $zero, $zero, loop
+
+    done:
+        # Store result in register $t10
+        ADD  $t7, $t2, $zero
+        BEQ  $zero, $zero, end
+
+    store_zero:
+        ADD  $t7, $zero, $zero  # Store 0 in $t10
+        BEQ  $zero, $zero, end
+
+    store_one:
+        ADDI $t7, $zero, 1  # Store 1 in $t10
+        BEQ  $zero, $zero, end
+
+    end:
+	nop
 
 #------------------------------------------------------------------------------------------------------------
 
