@@ -3,11 +3,21 @@ Welcome to project 2 where we are doing all things MIPS!
 
 Meet out group members:
 
-Nathan Sopt
-Declan Hurless
-Jesus Garcia
-Ephren Manning
 
-In this project you will find all of our code for MIPS programming of computerized architechture!
+**Nathan Sopt**, UIN:
 
-More things to come later. Thanks!
+Contributions:
+
+**Declan Hurless**, UIN:
+
+Contributions:
+
+**Jesus Garcia**, UIN:
+
+Contributions:
+
+**Ephren Manning**, UIN: 668722451
+
+Contributions: Wrote assembly code for Fibonacci(n) program.
+
+**To compute Fibonacci(n):** set the value of the word n to the desired n value for the computation. Assemble and run the program, the result will be stored in $t7.
