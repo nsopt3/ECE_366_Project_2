@@ -12,9 +12,9 @@
 
 # If we apply a simple chain-of-thought, the key functions that we need to design are:
 
-# (i) design a function Fibonacci(n) to compute n h Fibonacci number, 
-# (ii) design a function IsOdd(m) to compute if a number m is odd, i.e., when m is divided by 2, the remainder is 1
-# (iii) design a top level function that will first compute n th Fibonacci number and then use the computed number to check if it is odd.
+# (a) design a function Fibonacci(n) to compute n h Fibonacci number, 
+# (b) design a function IsOdd(m) to compute if a number m is odd, i.e., when m is divided by 2, the remainder is 1
+# (c) design a top level function that will first compute n th Fibonacci number and then use the computed number to check if it is odd.
 
 # (a) Design a MIPS program that will implement Fibonacci(n) of Figure 1. [Points : 50]
 
@@ -110,10 +110,72 @@
 #   else
 #       reutrn false
 
+# Pseudo-code of division by subtraction: (PART B)
+
+# def division(x,y): 
+#   quotient = 0 
+#   while x > y:
+#       # Repeat subtractions
+#       x=x−y
+#       quotient = quotient + 1 # update count of subtractions 
+# return x
+
 
 # START WRITING YOUR ASSEMBLY CODE HERE:
 
+.data
+    m:  .word 11    # Static value for m, change this value to whatever you want
 
+.text
+    main:
+        LW $t0, m($zero)    # Load the value of m into $t0
+
+        # Call the division by subtraction function from below:
+        MOVE $a0, $t0   # x = m
+        LI   $a1, 2     # y = 2
+        JAL  division   # result (remainder) returned in $v0
+
+        # Store the result (1 for odd, 0 for even) in $t4
+
+        # Check if remainder is 0 or 1
+        BEQ $v0, $zero, even    # If remainder is 0, it's even
+
+    odd:
+        LI $t4, 1   # Store 1 in $t4 (Odd number)
+        J end   # Jump straight to the end of the program if the number is odd
+
+    even:
+        LI $t4, 0   # Store 0 in $t4 (Even number)
+
+    end:
+        # $t4 should now hold the resulting value
+        nop                
+
+    # --------------------------------------------------------------------------------
+
+    # This next part is for doing division by subtraction: division(x, y)
+
+    # --------------------------------------------------------------------------------
+
+    # Input:  
+    #   $a0 = x
+    #   $a1 = y
+
+    # Output:
+    #   $v0 = x % y (remainder)
+
+    division:
+        MOVE $t1, $a0   # x gets stored into $t1
+        MOVE $t2, $a1   # y gets stored into $t2
+
+    division_loop:
+        BLT $t1, $t2, division_completed  # if x < y, stop loop
+        SUB $t1, $t1, $t2                 # x = x - y
+        J division_loop                   # Keep looping the division loop until division is done
+
+    division_completed:
+        MOVE $v0, $t1   # remainder = x
+        JR $ra          # Return back to where the division function was first called
 
 #------------------------------------------------------------------------------------------------------------
 
