@@ -9,11 +9,11 @@ Meet out group members:
 
 Contributions for part a: 
 
-Setup the gitHub environment / repository for project #2. Set up VSCode for use with MIPS assembly language. Created initial project files and organized the layout for the project. Wrote amajor
+    Setup the gitHub environment / repository for project #2. Set up VSCode for use with MIPS assembly language. Created initial project files and organized the layout for the project. Wrote amajor
 
 Contributions for part b:
 
-Wrote a majority of the code for part b, however testing and debugging was left for the other team members. Also cleaned up comments as well as restructured the readme to include progress from each progress report.
+    Wrote a majority of the code for part b, however testing and debugging was left for the other team members. Also cleaned up comments as well as restructured the readme to include progress from each progress report.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ Wrote a majority of the code for part b, however testing and debugging was left 
 
 Contributions for part a: 
 
-Went through all previous lecture slides from the ECE 366 course to ensure proper MIPS instructions were used for the project. We wanted to ensure that we only used instructions that we covered in class.
+    Went through all previous lecture slides from the ECE 366 course to ensure proper MIPS instructions were used for the project. We wanted to ensure that we only used instructions that we covered in class.
 
 Contributions for part b:
 
@@ -31,7 +31,7 @@ Contributions for part b:
 
 Contributions for part a:
 
-Aided Declan in searching through the lecture slides. Upon finding all usable instructions, a rough list of possible MIPS instructions was made. Also created a really rough MIPS pseudo code layout for the complete program.
+    Aided Declan in searching through the lecture slides. Upon finding all usable instructions, a rough list of possible MIPS instructions was made. Also created a really rough MIPS pseudo code layout for the complete program.
 
 Contributions for part b:
 
@@ -41,7 +41,7 @@ Contributions for part b:
 
 Contributions for part a:
 
-Used the pseudo code layout created earlier to write the assembly code for the Fibonacci(n) program.
+    Used the pseudo code layout created earlier to write the assembly code for the Fibonacci(n) program.
 
 Contributions for part b:
 
