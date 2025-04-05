@@ -3,6 +3,7 @@ Welcome to project 2 where we are doing all things MIPS!
 
 Meet out group members:
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 **Nathan Sopt**, UIN: 656988843
 
@@ -14,6 +15,8 @@ Contributions for part b:
 
 Wrote a majority of the code for part b, however testing and debugging was left for the other team members. Also cleaned up comments as well as restructured the readme to include progress from each progress report.
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 **Declan Hurless**, UIN: 678190922
 
 Contributions for part a: 
@@ -22,6 +25,8 @@ Went through all previous lecture slides from the ECE 366 course to ensure prope
 
 Contributions for part b:
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 **Jesus Garcia**, UIN: 650177551
 
 Contributions for part a:
@@ -29,6 +34,8 @@ Contributions for part a:
 Aided Declan in searching through the lecture slides. Upon finding all usable instructions, a rough list of possible MIPS instructions was made. Also created a really rough MIPS pseudo code layout for the complete program.
 
 Contributions for part b:
+
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 **Ephren Manning**, UIN: 668722451
 
