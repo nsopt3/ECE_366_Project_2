@@ -16,6 +16,10 @@ Created initial project   files and organized the layout for the project. Wrote 
 
 Wrote a majority of the code for part b, however testing and debugging was left for the other team members. Also cleaned up comments as well as restructured the readme to include progress from each progress report.
 
+#### Contributions for part C:
+
+Verified code in MARS simulation software to make sure it operates normally.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 ### Declan Hurless, UIN: 678190922
@@ -28,6 +32,10 @@ We wanted to ensure that we only used instructions that we covered in class.
 #### Contributions for part B:
 
 Retrieved the most up-to-date code from the GitHub repository, copied it into the MARS software, and proceeded to run the code to make sure it performed as intended.
+
+#### Contributions for part C:
+
+Coded a majority of part c using the code from parts a and b.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -42,6 +50,10 @@ Also created a really rough MIPS pseudo code layout for the complete program.
 
 Aided in researching how to write the MIPS code for performing division via the subtraction method. Lecture slides were referenced.
 
+#### Contributions for part C:
+
+Assisted Declan in coding by discussing how to merge parts a and b and writing pseudo code.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 ### Ephren Manning, UIN: 668722451
@@ -54,6 +66,10 @@ Used the pseudo code layout created earlier to write the assembly code for the F
 
 Aided in researching how to write the MIPS code for performing division via the subtraction method. Lecture slides were referenced. 
 Also downloaded the most up-to-date version of the code to verify the formatting and syntax was correct.
+
+#### Contributions for part C:
+
+Aided Nate in testing the code in MARS simulation software.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
