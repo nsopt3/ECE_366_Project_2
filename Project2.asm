@@ -51,7 +51,7 @@
 
 # START WRITING YOUR ASSEMBLY CODE HERE:
 
-#Result stored in $t7!
+#Result stored in $t7
 
 .data
     n: .word 11         # Change this value to compute Fibonacci(n)
@@ -123,6 +123,8 @@
 
 # START WRITING YOUR ASSEMBLY CODE HERE:
 
+#Result stored in $t4
+
 .data
     m:  .word 11    # Static value for m, change this value to whatever you want
 
@@ -192,6 +194,84 @@
 
 # START WRITING YOUR ASSEMBLY CODE HERE:
 
+#Result stored in $t7
 
+.data
+    n: .word 9     # input value for isFibonacciOdd(n)
+
+.text
+    main:
+        # Load n from memory
+        LW   $t0, n($zero)  # t0 = n
+
+        # Base cases
+        BLEZ $t0, store_zero
+        ADDI $t1, $zero, 0   # a = 0
+        ADDI $t2, $zero, 1   # b = 1
+
+        # Check if n == 1
+        BEQ  $t0, $t2, store_one    # If n == 1, store 1
+
+        ADDI $t3, $t0, -1    # t3 = n - 1 (loop counter)
+    
+    loop:
+        BEQ  $t3, $zero, done  # if counter == 0, exit loop
+
+        ADD  $t4, $t1, $t2   # temp = a + b
+        ADD  $t1, $t2, $zero # a = b
+        ADD  $t2, $t4, $zero # b = temp
+
+        ADDI $t3, $t3, -1    # decrement counter
+        BEQ  $zero, $zero, loop
+
+    done:
+        # Store result in register $t10
+        ADD  $t7, $t2, $zero
+        BEQ  $zero, $zero, odd_check
+
+    store_zero:
+        ADD  $t7, $zero, $zero  # Store 0 in $t10
+        BEQ  $zero, $zero, odd_check
+
+    store_one:
+        ADDI $t7, $zero, 1  # Store 1 in $t10
+        BEQ  $zero, $zero, odd_check
+
+    odd_check:
+	
+        # Call the division by subtraction function from below:
+        MOVE $a0, $t7   # x = m
+        LI   $a1, 2     # y = 2
+        JAL  division   # result (remainder) returned in $v0
+
+        # Store the result (1 for odd, 0 for even) in $t4
+
+        # Check if remainder is 0 or 1
+        BEQ $v0, $zero, even   # If remainder is 0, it's even
+
+    odd:
+        LI $t7, 1   # Store 1 in $t7 (Odd number)
+        J end	# Jump straight to the end of the program if the number is odd
+
+    even:
+        LI $t7, 0   # Store 0 in $t7 (Even number) 
+        J end	# Jump straight to the end of the program if the number is even
+        
+    division:
+        MOVE $t1, $a0   # x gets stored into $t1
+        MOVE $t2, $a1   # y gets stored into $t2
+
+    division_loop:
+        BLT $t1, $t2, division_completed  # if x < y, stop loop
+        SUB $t1, $t1, $t2                 # x = x - y
+        J division_loop                   # Keep looping the division loop until division is done
+
+    division_completed:
+        MOVE $v0, $t1   # remainder = x
+        JR $ra          # Return back to where the division function was first called
+        
+    end:
+        # $t7 should now hold the resulting value
+        nop 
 
 #------------------------------------------------------------------------------------------------------------
