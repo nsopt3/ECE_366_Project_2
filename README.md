@@ -77,6 +77,8 @@ Aided Nate in testing the code in MARS simulation software.
 
 **To compute the odd number (m):** Set the value of the word m to the desired value for the odd computation. Assemble and run the program, the result will be stored in $t4.
 
+**To compute isFibonacciOdd(n):** Set the value of the word n to the desired n value for the computation. Assemble and run the program, the result will be stored in $t7.
+
 **GitHub Repository Link:** https://github.com/nsopt3/ECE_366_Project_2
 
 
